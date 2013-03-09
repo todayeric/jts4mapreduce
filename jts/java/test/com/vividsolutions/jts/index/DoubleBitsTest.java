@@ -30,10 +30,11 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.index;
+package com.vividsolutions.jts.index;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
+
 import com.vividsolutions.jts.index.quadtree.DoubleBits;
 /**
  * Tests DoubleBits

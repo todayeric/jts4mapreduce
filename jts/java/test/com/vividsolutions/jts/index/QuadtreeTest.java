@@ -31,11 +31,10 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.index;
+package com.vividsolutions.jts.index;
 
 import junit.framework.TestCase;
 
-import com.vividsolutions.jts.index.SpatialIndex;
 import com.vividsolutions.jts.index.quadtree.Quadtree;
 import com.vividsolutions.jtstest.util.SerializationUtil;
 
