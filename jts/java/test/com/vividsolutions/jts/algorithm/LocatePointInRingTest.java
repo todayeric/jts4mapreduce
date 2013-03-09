@@ -1,4 +1,3 @@
-
 /*
  * The JTS Topology Suite is a collection of Java classes that
  * implement the fundamental operations required to validate a given
@@ -31,44 +30,34 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-
-package test.jts.junit.algorithm;
+package com.vividsolutions.jts.algorithm;
 
 import junit.framework.TestCase;
-
-import com.vividsolutions.jts.algorithm.NonRobustLineIntersector;
-
-
+import junit.textui.TestRunner;
+import com.vividsolutions.jts.io.*;
+import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jts.algorithm.*;
 
 /**
+ * Tests PointInRing algorithms
+ *
  * @version 1.7
  */
-public class NonRobustLineIntersectorTest extends TestCase {
+public class LocatePointInRingTest extends AbstractPointInRingTest {
 
-  private NonRobustLineIntersector li = new NonRobustLineIntersector();
+  private WKTReader reader = new WKTReader();
 
-  public NonRobustLineIntersectorTest(String Name_) {
-    super(Name_);
-  }//public NonRobustLineIntersectorTest(String Name_)
-
-  public static void main(String[] args) {
-    String[] testCaseName = {NonRobustLineIntersectorTest.class.getName()};
-    junit.textui.TestRunner.main(testCaseName);
-  }//public static void main(String[] args)
-
-  public void testNegativeZero() {
-    //MD suggests we ignore this issue for now.
-//    li.computeIntersection(new Coordinate(220, 260), new Coordinate(220, 0),
-//        new Coordinate(220, 0), new Coordinate(100, 0));
-//    assertEquals((new Coordinate(220, 0)).toString(), li.getIntersection(0).toString());
+  public static void main(String args[]) {
+    TestRunner.run(LocatePointInRingTest.class);
   }
 
-  public void testGetIntersectionNum() {
-    //MD: NonRobustLineIntersector may have different semantics for
-    //getIntersectionNumber
-//    li.computeIntersection(new Coordinate(220, 0), new Coordinate(110, 0),
-//        new Coordinate(0, 0), new Coordinate(110, 0));
-//    assertEquals(1, li.getIntersectionNum());
+  public LocatePointInRingTest(String name) { super(name); }
+
+  protected void runPtInRing(int expectedLoc, Coordinate pt, String wkt)
+      throws Exception
+  {
+    Geometry geom = reader.read(wkt);
+    assertEquals(expectedLoc, CGAlgorithms.locatePointInRing(pt, geom.getCoordinates()));
   }
 
-}//public class NonRobustLineIntersectorTest extends TestCase
+}

@@ -30,45 +30,44 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.algorithm;
+package com.vividsolutions.jts.algorithm;
 
+import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import com.vividsolutions.jts.io.*;
 import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.algorithm.*;
 
 /**
- * Tests PointInRing algorithms
- *
+ * Tests CGAlgorithms.isCCW
  * @version 1.7
  */
-public class MCPointInRingTest extends AbstractPointInRingTest {
+public class IsCCWTest extends TestCase {
 
   private WKTReader reader = new WKTReader();
 
   public static void main(String args[]) {
-    TestRunner.run(PointInRingTest.class);
+    TestRunner.run(IsCCWTest.class);
   }
 
-  public MCPointInRingTest(String name) { super(name); }
+  public IsCCWTest(String name) { super(name); }
 
-
-   protected void runPtInRing(int expectedLoc, Coordinate pt, String wkt)
-      throws Exception
+  public void testCCW() throws Exception
   {
-  	 // isPointInRing is not defined for pts on boundary
-  	 if (expectedLoc == Location.BOUNDARY)
-  		 return;
-  	 
-    Geometry geom = reader.read(wkt);
-    if (! (geom instanceof Polygon))
-    	return;
-    
-    LinearRing ring = (LinearRing) ((Polygon) geom).getExteriorRing();
-    boolean expected = expectedLoc == Location.INTERIOR;
-    MCPointInRing pir = new MCPointInRing(ring);
-    boolean result = pir.isInside(pt);
-    assertEquals(expected, result);
+    Coordinate[] pts = getCoordinates("POLYGON ((60 180, 140 240, 140 240, 140 240, 200 180, 120 120, 60 180))");
+    assertEquals(CGAlgorithms.isCCW(pts), false);
+
+    Coordinate[] pts2 = getCoordinates("POLYGON ((60 180, 140 120, 100 180, 140 240, 60 180))");
+    assertEquals(CGAlgorithms.isCCW(pts2), true);
+    // same pts list with duplicate top point - check that isCCW still works
+    Coordinate[] pts2x = getCoordinates("POLYGON ((60 180, 140 120, 100 180, 140 240, 140 240, 60 180))");
+    assertEquals(CGAlgorithms.isCCW(pts2x), true);
   }
 
+  private Coordinate[] getCoordinates(String wkt)
+      throws ParseException
+  {
+    Geometry geom = reader.read(wkt);
+    return geom.getCoordinates();
+  }
 }

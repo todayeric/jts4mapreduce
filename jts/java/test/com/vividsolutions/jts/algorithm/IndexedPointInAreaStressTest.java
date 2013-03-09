@@ -30,44 +30,53 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.algorithm;
+package com.vividsolutions.jts.algorithm;
 
+import test.jts.perf.algorithm.PointInAreaStressTester;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import com.vividsolutions.jts.io.*;
+
 import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.algorithm.*;
+import com.vividsolutions.jts.algorithm.locate.IndexedPointInAreaLocator;
+import com.vividsolutions.jts.algorithm.locate.PointOnGeometryLocator;
 
-/**
- * Tests CGAlgorithms.isCCW
- * @version 1.7
- */
-public class IsCCWTest extends TestCase {
 
-  private WKTReader reader = new WKTReader();
+public class IndexedPointInAreaStressTest extends TestCase {
 
   public static void main(String args[]) {
-    TestRunner.run(IsCCWTest.class);
+    TestRunner.run(IndexedPointInAreaStressTest.class);
   }
 
-  public IsCCWTest(String name) { super(name); }
+	PrecisionModel pmFixed_1 = new PrecisionModel(1.0);
+	
+	public IndexedPointInAreaStressTest(String name) {
+		super(name);
+	}
 
-  public void testCCW() throws Exception
-  {
-    Coordinate[] pts = getCoordinates("POLYGON ((60 180, 140 240, 140 240, 140 240, 200 180, 120 120, 60 180))");
-    assertEquals(CGAlgorithms.isCCW(pts), false);
+	public void testGrid()
+	{
+		// Use fixed PM to try and get at least some points hitting the boundary
+		GeometryFactory geomFactory = new GeometryFactory(pmFixed_1);
+//		GeometryFactory geomFactory = new GeometryFactory();
+		
+		PerturbedGridPolygonBuilder gridBuilder = new PerturbedGridPolygonBuilder(geomFactory);
+		gridBuilder.setNumLines(20);
+		gridBuilder.setLineWidth(10.0);
+    gridBuilder.setSeed(1185072199562L);
+		Geometry area = gridBuilder.getGeometry();
+		
+//    PointInAreaLocator pia = new IndexedPointInAreaLocator(area); 
+    PointOnGeometryLocator pia = new IndexedPointInAreaLocator(area); 
 
-    Coordinate[] pts2 = getCoordinates("POLYGON ((60 180, 140 120, 100 180, 140 240, 60 180))");
-    assertEquals(CGAlgorithms.isCCW(pts2), true);
-    // same pts list with duplicate top point - check that isCCW still works
-    Coordinate[] pts2x = getCoordinates("POLYGON ((60 180, 140 120, 100 180, 140 240, 140 240, 60 180))");
-    assertEquals(CGAlgorithms.isCCW(pts2x), true);
-  }
-
-  private Coordinate[] getCoordinates(String wkt)
-      throws ParseException
-  {
-    Geometry geom = reader.read(wkt);
-    return geom.getCoordinates();
-  }
+		PointInAreaStressTester gridTester = new PointInAreaStressTester(geomFactory, area);
+		gridTester.setNumPoints(100000);
+		gridTester.setPIA(pia);
+		
+		boolean isCorrect = gridTester.run();
+		assertTrue(isCorrect);
+	}
 }
+
+
+

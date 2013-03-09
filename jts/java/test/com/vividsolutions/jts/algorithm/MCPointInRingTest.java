@@ -30,53 +30,45 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.algorithm;
+package com.vividsolutions.jts.algorithm;
 
-import test.jts.perf.algorithm.PointInAreaStressTester;
-import junit.framework.TestCase;
 import junit.textui.TestRunner;
-
+import com.vividsolutions.jts.io.*;
 import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.algorithm.*;
-import com.vividsolutions.jts.algorithm.locate.IndexedPointInAreaLocator;
-import com.vividsolutions.jts.algorithm.locate.PointOnGeometryLocator;
 
+/**
+ * Tests PointInRing algorithms
+ *
+ * @version 1.7
+ */
+public class MCPointInRingTest extends AbstractPointInRingTest {
 
-public class IndexedPointInAreaStressTest extends TestCase {
+  private WKTReader reader = new WKTReader();
 
   public static void main(String args[]) {
-    TestRunner.run(IndexedPointInAreaStressTest.class);
+    TestRunner.run(PointInRingTest.class);
   }
 
-	PrecisionModel pmFixed_1 = new PrecisionModel(1.0);
-	
-	public IndexedPointInAreaStressTest(String name) {
-		super(name);
-	}
+  public MCPointInRingTest(String name) { super(name); }
 
-	public void testGrid()
-	{
-		// Use fixed PM to try and get at least some points hitting the boundary
-		GeometryFactory geomFactory = new GeometryFactory(pmFixed_1);
-//		GeometryFactory geomFactory = new GeometryFactory();
-		
-		PerturbedGridPolygonBuilder gridBuilder = new PerturbedGridPolygonBuilder(geomFactory);
-		gridBuilder.setNumLines(20);
-		gridBuilder.setLineWidth(10.0);
-    gridBuilder.setSeed(1185072199562L);
-		Geometry area = gridBuilder.getGeometry();
-		
-//    PointInAreaLocator pia = new IndexedPointInAreaLocator(area); 
-    PointOnGeometryLocator pia = new IndexedPointInAreaLocator(area); 
 
-		PointInAreaStressTester gridTester = new PointInAreaStressTester(geomFactory, area);
-		gridTester.setNumPoints(100000);
-		gridTester.setPIA(pia);
-		
-		boolean isCorrect = gridTester.run();
-		assertTrue(isCorrect);
-	}
+   protected void runPtInRing(int expectedLoc, Coordinate pt, String wkt)
+      throws Exception
+  {
+  	 // isPointInRing is not defined for pts on boundary
+  	 if (expectedLoc == Location.BOUNDARY)
+  		 return;
+  	 
+    Geometry geom = reader.read(wkt);
+    if (! (geom instanceof Polygon))
+    	return;
+    
+    LinearRing ring = (LinearRing) ((Polygon) geom).getExteriorRing();
+    boolean expected = expectedLoc == Location.INTERIOR;
+    MCPointInRing pir = new MCPointInRing(ring);
+    boolean result = pir.isInside(pt);
+    assertEquals(expected, result);
+  }
+
 }
-
-
-
