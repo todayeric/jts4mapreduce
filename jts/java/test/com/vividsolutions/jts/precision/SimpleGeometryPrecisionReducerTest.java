@@ -31,14 +31,15 @@
  *     (250)385-6040
  *     www.vividsolutions.com
  */
-package test.jts.junit.precision;
+package com.vividsolutions.jts.precision;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
-import com.vividsolutions.jts.geom.*;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.PrecisionModel;
 import com.vividsolutions.jts.io.WKTReader;
-import com.vividsolutions.jts.precision.SimpleGeometryPrecisionReducer;
 
 
 /**
