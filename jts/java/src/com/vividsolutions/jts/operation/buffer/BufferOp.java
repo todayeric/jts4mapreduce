@@ -32,16 +32,11 @@
  */
 package com.vividsolutions.jts.operation.buffer;
 
-/**
- * @version 1.7
- */
 import com.vividsolutions.jts.geom.*;
-import com.vividsolutions.jts.precision.SimpleGeometryPrecisionReducer;
 import com.vividsolutions.jts.math.MathUtil;
 import com.vividsolutions.jts.noding.*;
 import com.vividsolutions.jts.noding.snapround.*;
 
-//import debug.*;
 
 /**
  * Computes the buffer of a geometry, for both positive and negative buffer distances.
@@ -67,7 +62,7 @@ import com.vividsolutions.jts.noding.snapround.*;
  * following end cap styles are supported:
  * <ul
  * <li>{@link BufferParameters#CAP_ROUND} - the usual round end caps
- * <li>{@link BufferParameters#CAP_BUTT} - end caps are truncated flat at the line ends
+ * <li>{@link BufferParameters#CAP_FLAT} - end caps are truncated flat at the line ends
  * <li>{@link BufferParameters#CAP_SQUARE} - end caps are squared off at the buffer distance beyond the line ends
  * </ul>
  * <p>
@@ -87,31 +82,9 @@ import com.vividsolutions.jts.noding.snapround.*;
  * Note that if the buffer distance is zero then so is the computed simplify tolerance, 
  * no matter what the simplify factor.
  *
- * @version 1.7
  */
 public class BufferOp
 {
-  /**
-   * Specifies a round line buffer end cap style.
-   * @deprecated use BufferParameters
-   */
-  public static final int CAP_ROUND = BufferParameters.CAP_ROUND;
-  /**
-   * Specifies a butt (or flat) line buffer end cap style.
-   * @deprecated use BufferParameters
-   */
-  public static final int CAP_BUTT = BufferParameters.CAP_FLAT;
-  
-  /**
-   * Specifies a butt (or flat) line buffer end cap style.
-   * @deprecated use BufferParameters
-   */
-  public static final int CAP_FLAT = BufferParameters.CAP_FLAT;
-  /**
-   * Specifies a square line buffer end cap style.
-   * @deprecated use BufferParameters
-   */
-  public static final int CAP_SQUARE = BufferParameters.CAP_SQUARE;
   
   /**
    * A number of digits of precision which leaves some computational "headroom"
