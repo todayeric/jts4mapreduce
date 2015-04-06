@@ -37,12 +37,12 @@ import java.util.*;
 
 import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.geom.util.LinearComponentExtracter;
-import com.vividsolutions.jtstest.function.FunctionsUtil;
 
 /**
  * Utility methods for processing {@link SegmentString}s.
  * 
  * @author Martin Davis
+ * @author Eric Liu
  *
  */
 public class SegmentStringUtil 
@@ -85,19 +85,23 @@ public class SegmentStringUtil
    * The geometry will be either a {@link LineString} or a {@link MultiLineString} (possibly empty).
    *
    * @param segStrings a collection of SegmentStrings
+   * @param factory    use for create linestring, can't be null
    * @return a LineString or MultiLineString
    */
-  public static Geometry toGeometry(Collection segStrings)
+  public static Geometry toGeometry(Collection segStrings,GeometryFactory factory)
   {
+    if(factory == null){
+      throw new IllegalArgumentException("GeometryFacotry can't be null");
+    }
     LineString[] lines = new LineString[segStrings.size()];
     int index = 0;
     for (Iterator i = segStrings.iterator(); i.hasNext(); ) {
       SegmentString ss = (SegmentString) i.next();
-      LineString line = FunctionsUtil.getFactoryOrDefault(null).createLineString(ss.getCoordinates());
+      LineString line = factory.createLineString(ss.getCoordinates());
       lines[index++] = line;
     }
     if (lines.length == 1) return lines[0];
-    return FunctionsUtil.getFactoryOrDefault(null).createMultiLineString(lines);
+    return factory.createMultiLineString(lines);
   }
 
   public static String toString(List segStrings)
