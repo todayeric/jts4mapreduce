@@ -32,6 +32,7 @@
  */
 package com.vividsolutions.jts.geom;
 
+import com.vividsolutions.jts.geom.impl.*;
 /**
  * The internal representation of a list of coordinates inside a Geometry.
  * <p>
@@ -51,12 +52,10 @@ package com.vividsolutions.jts.geom;
  * The new Geometries
  * will use the custom CoordinateSequence implementation.
  * <p>
- * For an example, see the code for
- * {@link ExtendedCoordinateExample}.
+ * For an example, see the code for ExtendedCoordinateExample
  *
  * @see CoordinateArraySequenceFactory
  * @see PackedCoordinateSequenceFactory
- * @see ExtendedCoordinateExample
  *
  * @version 1.7
  */
@@ -69,7 +68,6 @@ public interface CoordinateSequence
   int X = 0;
   int Y = 1;
   int Z = 2;
-  int M = 3;
 
   /**
    * Returns the dimension (number of ordinates in each coordinate)
@@ -117,7 +115,7 @@ public interface CoordinateSequence
   /**
    * Returns ordinate X (0) of the specified coordinate.
    *
-   * @param index
+   * @param index the coordinate index in the sequence
    * @return the value of the X ordinate in the index'th coordinate
    */
   double getX(int index);
@@ -125,7 +123,7 @@ public interface CoordinateSequence
   /**
    * Returns ordinate Y (1) of the specified coordinate.
    *
-   * @param index
+   * @param index the coordinate index in the sequence
    * @return the value of the Y ordinate in the index'th coordinate
    */
   double getY(int index);
@@ -138,6 +136,7 @@ public interface CoordinateSequence
    *
    * @param index  the coordinate index in the sequence
    * @param ordinateIndex the ordinate index in the coordinate (in range [0, dimension-1])
+   * @return  the ordinateIndex'th  ordinate of the index'th coordinate
    */
   double getOrdinate(int index, int ordinateIndex);
 

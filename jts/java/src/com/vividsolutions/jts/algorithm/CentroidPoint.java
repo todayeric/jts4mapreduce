@@ -72,7 +72,7 @@ public class CentroidPoint
 
   /**
    * Adds the length defined by an array of coordinates.
-   * @param pts an array of {@link Coordinate}s
+   * @param pt an array of {@link Coordinate}s
    */
   public void add(Coordinate pt)
   {

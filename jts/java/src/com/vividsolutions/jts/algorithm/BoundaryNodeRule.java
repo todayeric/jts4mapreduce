@@ -44,7 +44,7 @@ import com.vividsolutions.jts.geom.*;
  * in specific situations (for instance, linear network topology
  * usually follows the {@link EndPointBoundaryNodeRule}.)
  * Some JTS operations 
- * (such as {@link RelateOp}, {@link BoundaryOp} and {@link IsSimpleOp})
+ * (such as {@link com.vividsolutions.jts.operation.relate.RelateOp}, {@link com.vividsolutions.jts.operation.BoundaryOp} and {@link com.vividsolutions.jts.operation.IsSimpleOp})
  * allow the BoundaryNodeRule to be specified,
  * and respect the supplied rule when computing the results of the operation.
  * <p>
@@ -65,9 +65,9 @@ import com.vividsolutions.jts.geom.*;
  * @author Martin Davis
  * @version 1.7
  *
- * @see RelateOp
- * @see BoundaryOp
- * @see IsSimpleOp
+ * @see com.vividsolutions.jts.operation.relate.RelateOp
+ * @see com.vividsolutions.jts.operation.BoundaryOp
+ * @see com.vividsolutions.jts.operation.IsSimpleOp
  * @see PointLocator
  */
 public interface BoundaryNodeRule
