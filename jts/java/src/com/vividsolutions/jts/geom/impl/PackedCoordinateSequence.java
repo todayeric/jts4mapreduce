@@ -282,7 +282,8 @@ public abstract class PackedCoordinateSequence
     /**
      * Builds a new empty packed coordinate sequence of a given size and dimension
      *
-     * @param coordinates
+     * @param size the size of coordinates
+     * @param dimension the dimension of coordinate
      */
     public Double(int size, int dimension) {
       this.dimension = dimension;
@@ -335,10 +336,7 @@ public abstract class PackedCoordinateSequence
       return coords[index * dimension + ordinate];
     }
 
-    /**
-     * @see com.vividsolutions.jts.geom.PackedCoordinateSequence#setOrdinate(int,
-     *      int, double)
-     */
+
     public void setOrdinate(int index, int ordinate, double value) {
       coordRef = null;
       coords[index * dimension + ordinate] = value;
@@ -364,7 +362,7 @@ public abstract class PackedCoordinateSequence
     float[] coords;
 
     /**
-     * Constructs a packed coordinate sequence from an array of <code>float<code>s
+     * Constructs a packed coordinate sequence from an array of <code>float</code>s
      *
      * @param coords
      * @param dimensions
@@ -382,14 +380,14 @@ public abstract class PackedCoordinateSequence
     }
 
     /**
-     * Constructs a packed coordinate sequence from an array of <code>double<code>s
+     * Constructs a packed coordinate sequence from an array of <code>double</code>s
      *
      * @param coordinates
      * @param dimension
      */
-    public Float(double[] coordinates, int dimensions) {
+    public Float(double[] coordinates, int dimension) {
       this.coords = new float[coordinates.length];
-      this.dimension = dimensions;
+      this.dimension = dimension;
       for (int i = 0; i < coordinates.length; i++) {
         this.coords[i] = (float) coordinates[i];
       }
@@ -418,7 +416,8 @@ public abstract class PackedCoordinateSequence
     /**
      * Constructs an empty packed coordinate sequence of a given size and dimension
      *
-     * @param coordinates
+     * @param size the size of coordinates
+     * @param dimension the dimension of coordinate
      */
     public Float(int size, int dimension) {
       this.dimension = dimension;
@@ -471,10 +470,7 @@ public abstract class PackedCoordinateSequence
       return coords[index * dimension + ordinate];
     }
 
-    /**
-     * @see com.vividsolutions.jts.geom.PackedCoordinateSequence#setOrdinate(int,
-     *      int, double)
-     */
+
     public void setOrdinate(int index, int ordinate, double value) {
       coordRef = null;
       coords[index * dimension + ordinate] = (float) value;

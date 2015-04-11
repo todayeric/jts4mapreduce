@@ -36,7 +36,7 @@ import java.io.Serializable;
 import com.vividsolutions.jts.geom.*;
 
 /**
- * A {@link CoordinateSequence} backed by an array of {@link Coordinates}.
+ * A {@link CoordinateSequence} backed by an array of {@link Coordinate}.
  * This is the implementation that {@link Geometry}s use by default.
  * Coordinates returned by #toArray and #getCoordinate are live --
  * modifications to them are actually changing the
@@ -80,7 +80,7 @@ public class CoordinateArraySequence
    * array is not copied).
    *
    * @param coordinates the coordinate array that will be referenced.
-   * @param the dimension of the coordinates
+   * @param dimension the dimension of the coordinates
    */
   public CoordinateArraySequence(Coordinate[] coordinates, int dimension) {
     this.coordinates = coordinates;
@@ -107,7 +107,7 @@ public class CoordinateArraySequence
    * with new {@link Coordinate}s.
    *
    * @param size the size of the sequence to create
-   * @param the dimension of the coordinates
+   * @param dimension the dimension of the coordinates
    */
   public CoordinateArraySequence(int size, int dimension) {
     coordinates = new Coordinate[size];

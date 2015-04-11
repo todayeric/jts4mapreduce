@@ -124,7 +124,6 @@ public class OraUtil
 
   /**
    * Convience method for ARRAY construction.
-   * </p>
    */
   public static ARRAY toARRAY(double[] doubles, String dataType,
       OracleConnection connection) throws SQLException

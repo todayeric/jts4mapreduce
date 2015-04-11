@@ -202,7 +202,6 @@ public class MonotoneChain {
    * This saves on the overhead of checking intersection
    * each time, since clients may be able to do this more efficiently.
    * 
-   * @param searchEnv the search envelope
    * @param mco the overlap action to execute on selected segments
    */
   public void computeOverlaps(MonotoneChain mc, MonotoneChainOverlapAction mco)

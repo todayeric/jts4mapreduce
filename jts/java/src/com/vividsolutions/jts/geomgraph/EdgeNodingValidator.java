@@ -35,6 +35,7 @@ package com.vividsolutions.jts.geomgraph;
 
 import java.util.*;
 import com.vividsolutions.jts.noding.*;
+import com.vividsolutions.jts.geom.TopologyException;
 
 /**
  * Validates that a collection of {@link Edge}s is correctly noded.

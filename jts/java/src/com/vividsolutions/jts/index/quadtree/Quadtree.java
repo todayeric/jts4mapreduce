@@ -38,6 +38,8 @@ import java.util.ArrayList;
 import java.util.List;
 import com.vividsolutions.jts.geom.Envelope;
 import com.vividsolutions.jts.index.*;
+import com.vividsolutions.jts.geom.Geometry;
+
 /**
  * A Quadtree is a spatial index structure for efficient range querying
  * of items bounded by 2D rectangles.  

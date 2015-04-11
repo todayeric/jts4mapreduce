@@ -19,7 +19,7 @@ import com.vividsolutions.jts.geom.LineString;
 /**
  * Dissolves the linear components 
  * from a collection of {@link Geometry}s
- * into a set of maximal-length {@link Linestring}s
+ * into a set of maximal-length {@link LineString}s
  * in which every unique segment appears once only.
  * The output linestrings run between node vertices
  * of the input, which are vertices which have

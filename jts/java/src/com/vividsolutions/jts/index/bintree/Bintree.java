@@ -149,7 +149,7 @@ if (newSize <= oldSize) {
   /**
    * Removes a single item from the tree.
    *
-   * @param itemEnv the Envelope of the item to be removed
+   * @param itemInterval the Interval of the item to be removed
    * @param item the item to remove
    * @return <code>true</code> if the item was found (and thus removed)
    */
@@ -194,12 +194,12 @@ if (newSize <= oldSize) {
    * to the given collection.
    * If the query interval is <tt>null</tt>, add all items in the tree.
    * 
-   * @param interval a query nterval, or null
+   * @param interval a query interval, or null
    * @param resultItems the candidate items found
    */
-  public void query(Interval interval, Collection foundItems)
+  public void query(Interval interval, Collection resultItems)
   {
-    root.addAllItemsFromOverlapping(interval, foundItems);
+    root.addAllItemsFromOverlapping(interval, resultItems);
   }
 
   private void collectStats(Interval interval)

@@ -222,7 +222,8 @@ public class GeometryEditor
      * Edits a Geometry by returning a new Geometry with a modification.
      * The returned geometry may be:
      * <ul>
-     * <li>the input geometry itself
+     * <li>the input geometry itself</li>
+     * </ul>
      * The returned Geometry might be the same as the Geometry passed in.
      * It may be <code>null</code> if the geometry is to be deleted.
      *

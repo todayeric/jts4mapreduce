@@ -153,7 +153,7 @@ public class LineSegment
    * Determines the orientation of a LineSegment relative to this segment.
    * The concept of orientation is specified as follows:
    * Given two line segments A and L,
-   * <ul
+   * <ul>
    * <li>A is to the left of a segment L if A lies wholly in the
    * closed half-plane lying to the left of L
    * <li>A is to the right of a segment L if A lies wholly in the
@@ -352,9 +352,9 @@ public class LineSegment
    * Computes the Projection Factor for the projection of the point p
    * onto this LineSegment.  The Projection Factor is the constant r
    * by which the vector for this segment must be multiplied to
-   * equal the vector for the projection of <tt>p<//t> on the line
+   * equal the vector for the projection of <tt>p</tt> on the line
    * defined by this segment.
-   * <p>
+   * 
    * The projection factor will lie in the range <tt>(-inf, +inf)</tt>,
    * or be <code>NaN</code> if the line segment has zero length..
    * 

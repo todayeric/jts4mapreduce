@@ -46,7 +46,7 @@ import com.vividsolutions.jts.geom.Coordinate;
  * 1 | 0
  * --+--
  * 2 | 3
- * <pre>
+ * </pre>
  *
  * @version 1.7
  */

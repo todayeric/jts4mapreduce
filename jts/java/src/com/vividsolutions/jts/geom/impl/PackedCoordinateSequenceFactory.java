@@ -65,8 +65,8 @@ public class PackedCoordinateSequenceFactory implements
    * Creates a new PackedCoordinateSequenceFactory
    * of the given type.
    * Acceptable type values are
-   * {@linkplain PackedCoordinateSequenceFactory#Float}or
-   * {@linkplain PackedCoordinateSequenceFactory#Double}
+   * {@linkplain PackedCoordinateSequenceFactory#FLOAT}or
+   * {@linkplain PackedCoordinateSequenceFactory#DOUBLE}
    */
   public PackedCoordinateSequenceFactory(int type)
   {
@@ -87,8 +87,8 @@ public class PackedCoordinateSequenceFactory implements
 
   /**
    * Returns the type of packed coordinate sequences this factory builds, either
-   * {@linkplain PackedCoordinateSequenceFactory#Float} or
-   * {@linkplain PackedCoordinateSequenceFactory#Double}
+   * {@linkplain PackedCoordinateSequenceFactory#FLOAT} or
+   * {@linkplain PackedCoordinateSequenceFactory#DOUBLE}
    */
   public int getType() {
     return type;
@@ -96,8 +96,8 @@ public class PackedCoordinateSequenceFactory implements
 
   /**
    * Sets the type of packed coordinate sequences this factory builds,
-   * acceptable values are {@linkplain PackedCoordinateSequenceFactory#Float}or
-   * {@linkplain PackedCoordinateSequenceFactory#Double}
+   * acceptable values are {@linkplain PackedCoordinateSequenceFactory#FLOAT}or
+   * {@linkplain PackedCoordinateSequenceFactory#DOUBLE}
    */
   public void setType(int type) {
     if (type != DOUBLE && type != FLOAT)
@@ -132,10 +132,7 @@ public class PackedCoordinateSequenceFactory implements
     }
   }
 
-  /**
-   * @see com.vividsolutions.jts.geom.CoordinateSequenceFactory#create(double[],
-   *      int)
-   */
+
   public CoordinateSequence create(double[] packedCoordinates, int dimension) {
     if (type == DOUBLE) {
       return new PackedCoordinateSequence.Double(packedCoordinates, dimension);
@@ -144,10 +141,7 @@ public class PackedCoordinateSequenceFactory implements
     }
   }
 
-  /**
-   * @see com.vividsolutions.jts.geom.CoordinateSequenceFactory#create(float[],
-   *      int)
-   */
+
   public CoordinateSequence create(float[] packedCoordinates, int dimension) {
     if (type == DOUBLE) {
       return new PackedCoordinateSequence.Double(packedCoordinates, dimension);

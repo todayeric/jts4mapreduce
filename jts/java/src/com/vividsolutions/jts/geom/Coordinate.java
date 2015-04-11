@@ -207,14 +207,15 @@ public class Coordinate implements Comparable, Cloneable, Serializable {
    * The Z ordinate is ignored.
    *
    *@param other a <code>Coordinate</code> with which to do the 2D comparison.
+   *@param tolerance the absolute value of difference between tow coordinate' x/y should <= tolerance
    *@return true if <code>other</code> is a <code>Coordinate</code>
    *      with the same values for X and Y.
    */
-  public boolean equals2D(Coordinate c, double tolerance){
-    if (! NumberUtil.equalsWithTolerance(this.x, c.x, tolerance)) {
+  public boolean equals2D(Coordinate other, double tolerance){
+    if (! NumberUtil.equalsWithTolerance(this.x, other.x, tolerance)) {
       return false;
     }
-    if (! NumberUtil.equalsWithTolerance(this.y, c.y, tolerance)) {
+    if (! NumberUtil.equalsWithTolerance(this.y, other.y, tolerance)) {
       return false;
     }
     return true;
