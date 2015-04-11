@@ -44,7 +44,7 @@ import java.util.Iterator;
 
 /**
  * A {@link Shape} which contains a heterogeneous collection of other shapes
- * representing JTS {@link Geometry}s.
+ * representing JTS {@link com.vividsolutions.jts.geom.Geometry}s.
  * 
  * @author Martin Davis
  *

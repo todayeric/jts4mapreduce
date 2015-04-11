@@ -141,7 +141,7 @@ public class InteriorIntersectionFinder
   /**
    * Gets the intersections found.
    * 
-   * @return a List of {@link Coordinate)
+   * @return a List of {@link Coordinate}
    */
   public List getIntersections()
   {

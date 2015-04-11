@@ -47,7 +47,7 @@ import com.vividsolutions.jts.geom.*;
  * The resulting geometry are in the base coordinate system 
  * of the font.  
  * The geometry can be further transformed as necessary using
- * {@link AffineTransformation}s.
+ * {@link com.vividsolutions.jts.geom.util.AffineTransformation}s.
  * 
  * @author Martin Davis
  *

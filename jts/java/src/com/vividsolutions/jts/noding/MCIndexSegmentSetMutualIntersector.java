@@ -59,7 +59,7 @@ public class MCIndexSegmentSetMutualIntersector implements SegmentSetMutualInter
   private STRtree index = new STRtree();
 
   /**
-   * Constructs a new intersector for a given set of {@link SegmentStrings}.
+   * Constructs a new intersector for a given set of {@link SegmentString}.
    * 
    * @param baseSegStrings the base segment strings to intersect
    */
@@ -100,16 +100,16 @@ public class MCIndexSegmentSetMutualIntersector implements SegmentSetMutualInter
    * for all <i>candidate</i> intersections between
    * the given collection of SegmentStrings and the set of indexed segments. 
    * 
-   * @param a set of segments to intersect
-   * @param the segment intersector to use
+   * @param segStrings a set of segments to intersect
+   * @param segIntersector the segment intersector to use
    */
-  public void process(Collection segStrings, SegmentIntersector segInt)
+  public void process(Collection segStrings, SegmentIntersector segIntersector)
   {
   	List monoChains = new ArrayList();
     for (Iterator i = segStrings.iterator(); i.hasNext(); ) {
       addToMonoChains((SegmentString) i.next(), monoChains);
     }
-    intersectChains(monoChains, segInt);
+    intersectChains(monoChains, segIntersector);
 //    System.out.println("MCIndexBichromaticIntersector: # chain overlaps = " + nOverlaps);
 //    System.out.println("MCIndexBichromaticIntersector: # oct chain overlaps = " + nOctOverlaps);
   }
