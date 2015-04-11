@@ -442,7 +442,7 @@ Debug.print(e.getEdgeIntersectionList());
    * Determines the {@link Location} of the given {@link Coordinate}
    * in this geometry.
    * 
-   * @param p the point to test
+   * @param pt the point to test
    * @return the location of the point in the geometry
    */
   public int locate(Coordinate pt)
