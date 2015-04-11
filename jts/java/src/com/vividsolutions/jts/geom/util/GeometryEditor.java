@@ -330,7 +330,7 @@ public class GeometryEditor
     /**
      * Edits a {@link CoordinateSequence} from a {@link Geometry}.
      *
-     * @param coordseq the coordinate array to operate on
+     * @param coordSeq the coordinate array to operate on
      * @param geometry the geometry containing the coordinate list
      * @return an edited coordinate sequence (which may be the same as the input)
      */
