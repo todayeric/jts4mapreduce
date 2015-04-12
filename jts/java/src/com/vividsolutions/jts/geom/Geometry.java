@@ -415,9 +415,9 @@ public abstract class Geometry
    * <li>Zero-dimensional geometries (points) are simple iff they have no
    * repeated points.
    * <li>Empty <code>Geometry</code>s are always simple.
-   * <ul>
+   * </ul>
    *
-   * @return <code>true</code> if this <code>Geometry</code> is simple
+   * @return true if this Geometry is simple
    * @see #isValid
    */
   public boolean isSimple()
@@ -432,7 +432,7 @@ public abstract class Geometry
    * <p>
    * For validity rules see the Javadoc for the specific Geometry subclass.
    *
-   *@return <code>true</code> if this <code>Geometry</code> is valid
+   *@return true if this Geometry is valid
    *
    * @see IsValidOp
    */
@@ -1102,7 +1102,7 @@ public abstract class Geometry
    * Note that to produce the expected result the input geometries
    * should be in normal form.  It is the caller's 
    * responsibility to perform this where required
-   * (using {@link Geometry#norm()
+   * (using {@link Geometry#norm()}
    * or {@link #normalize()} as appropriate).
    * 
    * @param o the Object to compare
@@ -1252,7 +1252,9 @@ public abstract class Geometry
    *  points in the <code>Geometry</code>. This obviously applies only to <code>Geometry</code>
    *  s which contain 3 or more points; the results for degenerate cases are
    *  specified as follows:
-   *  <TABLE>
+   *
+   *  <TABLE border="1">
+   *    <caption>result type for different Geometry</caption>
    *    <TR>
    *      <TH>    Number of <code>Point</code>s in argument <code>Geometry</code>   </TH>
    *      <TH>    <code>Geometry</code> class of result     </TH>
@@ -1420,7 +1422,7 @@ public abstract class Geometry
   }
 
   /**
-   * Computes a <coe>Geometry </code> representing the closure of the point-set 
+   * Computes a <code>Geometry</code> representing the closure of the point-set
    * which is the union of the points in this <code>Geometry</code> which are not 
    * contained in the <code>other</code> Geometry,
    * with the points in the <code>other</code> Geometry not contained in this
