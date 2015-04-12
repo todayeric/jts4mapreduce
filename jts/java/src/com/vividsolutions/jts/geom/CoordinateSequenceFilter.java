@@ -52,15 +52,15 @@ package com.vividsolutions.jts.geom;
  *  an example of the Gang-of-Four Visitor pattern.
  *  <p> 
  * <b>Note</b>: In general, it is preferable to treat Geometrys as immutable. 
- * Mutation should be performed by creating a new Geometry object (see {@link GeometryEditor} 
- * and {@link GeometryTransformer} for convenient ways to do this).
+ * Mutation should be performed by creating a new Geometry object (see {@link com.vividsolutions.jts.geom.util.GeometryEditor}
+ * and {@link com.vividsolutions.jts.geom.util.GeometryTransformer} for convenient ways to do this).
  * An exception to this rule is when a new Geometry has been created via {@link Geometry#clone()}.
  * In this case mutating the Geometry will not cause aliasing issues, 
  * and a filter is a convenient way to implement coordinate transformation.
  *  
  * @see Geometry#apply(CoordinateFilter)
- * @see GeometryTransformer
- * @see GeometryEditor
+ * @see com.vividsolutions.jts.geom.util.GeometryTransformer
+ * @see com.vividsolutions.jts.geom.util.GeometryEditor
  *
  *@see Geometry#apply(CoordinateSequenceFilter)
  *@author Martin Davis

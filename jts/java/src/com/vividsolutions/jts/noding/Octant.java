@@ -43,7 +43,7 @@ import com.vividsolutions.jts.geom.Coordinate;
  * ---+--
  * 4 /|\ 7
  *  /5|6\
- * <pre>
+ * </pre>
  * If line segments lie along a coordinate axis, the octant is the lower of the two
  * possible values.
  *

@@ -994,12 +994,12 @@ public class AffineTransformation
    * Cretaes a new @link Geometry which is the result
    * of this transformation applied to the input Geometry.
    * 
-   *@param seq  a <code>Geometry</code>
+   *@param geom  a <code>Geometry</code>
    *@return a transformed Geometry
    */
-  public Geometry transform(Geometry g)
+  public Geometry transform(Geometry geom)
   {
-    Geometry g2 = (Geometry) g.clone();
+    Geometry g2 = (Geometry) geom.clone();
     g2.apply(this);
     return g2;    
   }
