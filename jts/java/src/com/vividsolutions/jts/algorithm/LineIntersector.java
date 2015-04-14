@@ -181,20 +181,11 @@ public abstract class LineIntersector
     result = 0;
   }
 
-  /**
-   * Force computed intersection to be rounded to a given precision model
-   * @param precisionModel
-   * @deprecated use <code>setPrecisionModel</code> instead
-   */
-  public void setMakePrecise(PrecisionModel precisionModel)
-  {
-    this.precisionModel = precisionModel;
-  }
 
   /**
    * Force computed intersection to be rounded to a given precision model.
    * No getter is provided, because the precision model is not required to be specified.
-   * @param precisionModel
+   * @param precisionModel precision model to be used
    */
   public void setPrecisionModel(PrecisionModel precisionModel)
   {
@@ -218,6 +209,11 @@ public abstract class LineIntersector
    * This function computes the boolean value of the hasIntersection test.
    * The actual value of the intersection (if there is one)
    * is equal to the value of <code>p</code>.
+   *
+   * @param p point to be test
+   * @param p1 the first point of line
+   * @param p2 the end point of line
+   *
    */
   public abstract void computeIntersection(
         Coordinate p,
@@ -231,6 +227,11 @@ public abstract class LineIntersector
    * Computes the intersection of the lines p1-p2 and p3-p4.
    * This function computes both the boolean value of the hasIntersection test
    * and the (approximate) value of the intersection point itself (if there is one).
+   *
+   * @param p1 the first point of line p1-p2
+   * @param p2 the end point of line p1-p2
+   * @param p3 the first point of line p3-p4
+   * @param p4 the end point of line p3-p4
    */
   public void computeIntersection(
                 Coordinate p1, Coordinate p2,
@@ -317,6 +318,7 @@ public abstract class LineIntersector
    * It does <b>not</b> return true if
    * the input point is internal to the intersection segment.
    *
+   * @param pt the point to be test
    * @return true if the input point is one of the intersection points.
    */
   public boolean isIntersection(Coordinate pt) {
@@ -343,6 +345,7 @@ public abstract class LineIntersector
   /**
    * Tests whether either intersection point is an interior point of the specified input segment.
    *
+   * @param inputLineIndex the segment index in inputLines array
    * @return <code>true</code> if either intersection point is in the interior of the input segment
    */
   public boolean isInteriorIntersection(int inputLineIndex)
