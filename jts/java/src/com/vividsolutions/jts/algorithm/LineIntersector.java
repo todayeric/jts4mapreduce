@@ -69,12 +69,6 @@ import com.vividsolutions.jts.io.WKTWriter;
  */
 public abstract class LineIntersector 
 {
-/**
- * These are deprecated, due to ambiguous naming
- */
-  public final static int DONT_INTERSECT = 0;
-  public final static int DO_INTERSECT = 1;
-  public final static int COLLINEAR = 2;
   
   /**
    * Indicates that line segments do not intersect
