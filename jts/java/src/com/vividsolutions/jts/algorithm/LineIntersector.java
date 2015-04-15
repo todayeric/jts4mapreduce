@@ -101,6 +101,11 @@ public abstract class LineIntersector
    * My hypothesis is that the function is safe to use for points which are the
    * result of <b>rounding</b> points which lie on the line,
    * but not safe to use for <b>truncated</b> points.
+   *
+   * @param p the intersection point
+   * @param p0 the start point of segment
+   * @param p2 the end point of segment
+   * @return the "edge distance":<ul><li>p=p0: result is 0<li>p=p1: result is max(dx,dy) of p1-p0 <li>default:result is dx or dy of p-p0 </ul>
    */
   public static double computeEdgeDistance(
         Coordinate p,
