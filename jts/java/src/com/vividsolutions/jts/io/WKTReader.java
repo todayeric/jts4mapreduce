@@ -105,7 +105,7 @@ import java.util.ArrayList;
  *         | <b>EMPTY</b>
  *         
  * <i>CoordinateSingleton:</i>
- *         <b>(</b> <i>Coordinate <b>)</b>
+ *         <b>(</b> <i>Coordinate</i> <b>)</b>
  *         | <b>EMPTY</b>
  *
  * <i>CoordinateSequenceList:</i>
@@ -162,7 +162,7 @@ public class WKTReader
    * from a {@link String}.
    *
    * @param wellKnownText
-   *            one or more <Geometry Tagged Text>strings (see the OpenGIS
+   *            one or more Geometry Tagged Text strings (see the OpenGIS
    *            Simple Features Specification) separated by whitespace
    * @return a <code>Geometry</code> specified by <code>wellKnownText</code>
    * @throws ParseException
@@ -182,7 +182,7 @@ public class WKTReader
    * Reads a Well-Known Text representation of a {@link Geometry}
    * from a {@link Reader}.
    *
-   *@param  reader           a Reader which will return a <Geometry Tagged Text>
+   *@param  reader           a Reader which will return a Geometry Tagged Text
    *      string (see the OpenGIS Simple Features Specification)
    *@return                  a <code>Geometry</code> read from <code>reader</code>
    *@throws  ParseException  if a parsing problem occurs

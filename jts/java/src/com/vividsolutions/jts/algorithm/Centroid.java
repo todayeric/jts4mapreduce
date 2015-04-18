@@ -92,6 +92,7 @@ public class Centroid
 
   /**
    * Creates a new instance for computing the centroid of a geometry
+   * @param geom input geometry for compute
    */
   public Centroid(Geometry geom)
   {

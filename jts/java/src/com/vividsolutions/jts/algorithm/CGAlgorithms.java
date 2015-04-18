@@ -171,6 +171,8 @@ public class CGAlgorithms
    * Tests whether a point lies on the line segments defined by a list of
    * coordinates.
    * 
+   * @param p  point to be test
+   * @param pt coordinates of line
    * @return true if the point is a vertex of the line or lies in the interior
    *         of a line segment in the linestring
    */
@@ -418,6 +420,8 @@ public class CGAlgorithms
    *          one point of the line
    * @param D
    *          another point of the line (must be different to A)
+   * 
+   * @return shortest distance from line AB to CD
    */
   public static double distanceLineLine(Coordinate A, Coordinate B,
       Coordinate C, Coordinate D)

@@ -47,7 +47,7 @@ import java.util.*;
 
 /**
  * Implements the SFS <tt>relate()</tt> generalized spatial predicate on two {@link Geometry}s.
- * <b>
+ *
  * The class supports specifying a custom {@link BoundaryNodeRule}
  * to be used during the relate computation.
  * <p>

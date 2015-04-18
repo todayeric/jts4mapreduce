@@ -290,7 +290,7 @@ public class LineSegment
    * fraction along the line defined by this segment.
    * A fraction of <code>0.0</code> returns the start point of the segment;
    * a fraction of <code>1.0</code> returns the end point of the segment.
-   * If the fraction is < 0.0 or > 1.0 the point returned 
+   * If the fraction is &lt; 0.0 or &gt; 1.0 the point returned
    * will lie before the start or beyond the end of the segment. 
    *
    * @param segmentLengthFraction the fraction of the segment length along the line

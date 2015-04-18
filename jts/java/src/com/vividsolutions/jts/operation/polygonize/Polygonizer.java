@@ -148,7 +148,7 @@ public class Polygonizer
    * Allows disabling the valid ring checking, 
    * to optimize situations where invalid rings are not expected.
    * <p>
-   * The default is <code>true</code.
+   * The default is <code>true</code>.
    * 
    * @param isCheckingRingsValid true if generated rings should be checked for validity
    */

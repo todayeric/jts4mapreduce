@@ -81,7 +81,7 @@ public final class CoordinateArraySequenceFactory
   }
 
   /**
-   * The created sequence dimension is clamped to be <= 3. 
+   * The created sequence dimension is clamped to be &lt;= 3.
    * 
    * @see com.vividsolutions.jts.geom.CoordinateSequenceFactory#create(int, int)
    *

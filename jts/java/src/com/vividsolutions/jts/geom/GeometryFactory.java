@@ -221,7 +221,7 @@ public class GeometryFactory
    * <li>null : returns an empty {@link Point}
    * <li>a point : returns a non-empty {@link Point}
    * <li>a line : returns a two-point {@link LineString}
-   * <li>a rectangle : returns a {@link Polygon}> whose points are (minx, miny),
+   * <li>a rectangle : returns a {@link Polygon} whose points are (minx, miny),
    *  (minx, maxy), (maxx, maxy), (maxx, miny), (minx, miny).
    * </ul>
    * 
@@ -422,7 +422,7 @@ public class GeometryFactory
   /**
    * Constructs a <code>Polygon</code> with the given exterior boundary.
    *
-   * @param shell
+   * @param coordinates
    *            the outer boundary of the new <code>Polygon</code>, or
    *            <code>null</code> or an empty <code>LinearRing</code> if
    *            the empty geometry is to be created.
@@ -435,7 +435,7 @@ public class GeometryFactory
   /**
    * Constructs a <code>Polygon</code> with the given exterior boundary.
    *
-   * @param shell
+   * @param coordinates
    *            the outer boundary of the new <code>Polygon</code>, or
    *            <code>null</code> or an empty <code>LinearRing</code> if
    *            the empty geometry is to be created.

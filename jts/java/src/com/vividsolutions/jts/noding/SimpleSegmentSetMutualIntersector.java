@@ -48,9 +48,9 @@ public class SimpleSegmentSetMutualIntersector implements SegmentSetMutualInters
   private final Collection baseSegStrings;
 
   /**
-   * Constructs a new intersector for a given set of {@link SegmentStrings}.
+   * Constructs a new intersector for a given set of {@link SegmentString}.
    * 
-   * @param baseSegStrings the base segment strings to intersect
+   * @param segStrings the base segment strings to intersect
    */
   public SimpleSegmentSetMutualIntersector(Collection segStrings)
   {
@@ -62,16 +62,16 @@ public class SimpleSegmentSetMutualIntersector implements SegmentSetMutualInters
    * for all <i>candidate</i> intersections between
    * the given collection of SegmentStrings and the set of base segments. 
    * 
-   * @param a set of segments to intersect
-   * @param the segment intersector to use
+   * @param segStrings a set of segments to intersect
+   * @param segItor the segment intersector to use
    */
-  public void process(Collection segStrings, SegmentIntersector segInt) {
+  public void process(Collection segStrings, SegmentIntersector segItor) {
     for (Iterator i = baseSegStrings.iterator(); i.hasNext(); ) {
     	SegmentString baseSS = (SegmentString) i.next();
     	for (Iterator j = segStrings.iterator(); j.hasNext(); ) {
 	      	SegmentString ss = (SegmentString) j.next();
-	      	intersect(baseSS, ss, segInt);
-	        if (segInt.isDone()) 
+	      	intersect(baseSS, ss, segItor);
+	        if (segItor.isDone())
 	        	return;
     	}
     }

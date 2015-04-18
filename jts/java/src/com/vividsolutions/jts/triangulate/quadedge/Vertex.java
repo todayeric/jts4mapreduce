@@ -165,7 +165,7 @@ public class Vertex
     /**
      * Computes the scalar product c(v)
      * 
-     * @param v a vertex
+     * @param c factor for create a new vertex
      * @return returns the scaled vector
      */
     Vertex times(double c) {
@@ -219,7 +219,7 @@ public class Vertex
    * 
    * @param b a vertex
    * @param c a vertex
-   * @returns true if the triangle is oriented CCW
+   * @return true if the triangle is oriented CCW
    */
   public final boolean isCCW(Vertex b, Vertex c) 
   {

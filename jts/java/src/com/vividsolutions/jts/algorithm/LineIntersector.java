@@ -104,7 +104,7 @@ public abstract class LineIntersector
    *
    * @param p the intersection point
    * @param p0 the start point of segment
-   * @param p2 the end point of segment
+   * @param p1 the end point of segment
    * @return the "edge distance":<ul><li>p=p0: result is 0<li>p=p1: result is max(dx,dy) of p1-p0 <li>default:result is dx or dy of p-p0 </ul>
    */
   public static double computeEdgeDistance(
@@ -146,6 +146,11 @@ public abstract class LineIntersector
   /**
    * This function is non-robust, since it may compute the square of large numbers.
    * Currently not sure how to improve this.
+   * 
+   * @param p the intersection point
+   * @param p1 the start point of segment
+   * @param p2 the end point of segment
+   * @return the "edge distance": result is distance between the P P1 points
    */
   public static double nonRobustComputeEdgeDistance(
         Coordinate p,

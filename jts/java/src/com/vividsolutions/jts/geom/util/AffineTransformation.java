@@ -68,9 +68,9 @@ import com.vividsolutions.jts.util.*;
  * Affine transformations can be composed using the {@link #compose} method.
  * Composition is computed via multiplication of the 
  * transformation matrices, and is defined as:
- * <blockquote><pre>
- * A.compose(B) = T<sub>B</sub> x T<sub>A</sub>
- * </pre></blockquote>
+ * <ul>
+ *    <li>A.compose(B) = T<sub>B</sub> x T<sub>A</sub>
+ * </ul>
  * This produces a transformation whose effect is that of A followed by B.
  * The methods {@link #reflect}, {@link #rotate}, 
  * {@link #scale}, {@link #shear}, and {@link #translate} 
@@ -559,13 +559,13 @@ public class AffineTransformation
    * about the line defined by vector (x,y).
    * The transformation for a reflection
    * is computed by:
-   * <blockquote><pre>
-   * d = sqrt(x<sup>2</sup> + y<sup>2</sup>)  
-   * sin = y / d;
-   * cos = x / d;
+   * <ul>
+   * <li>d = sqrt(x<sup>2</sup> + y<sup>2</sup>)
+   * <li>sin = y / d;
+   * <li>cos = x / d;
    * 
-   * T<sub>ref</sub> = T<sub>rot(sin, cos)</sub> x T<sub>scale(1, -1)</sub> x T<sub>rot(-sin, cos)</sub  
-   * </pre></blockquote> 
+   * <li>T<sub>ref</sub> = T<sub>rot(sin, cos)</sub> x T<sub>scale(1, -1)</sub> x T<sub>rot(-sin, cos)</sub>
+   * </ul>
    * 
    * @param x the x-component of the reflection line vector
    * @param y the y-component of the reflection line vector
@@ -917,9 +917,9 @@ public class AffineTransformation
    * is equal to applying this transformation 
    * followed by the argument transformation.
    * Mathematically,
-   * <blockquote><pre>
-   * A.compose(B) = T<sub>B</sub> x T<sub>A</sub>
-   * </pre></blockquote>
+   * <ul>
+   * <li>A.compose(B) = T<sub>B</sub> x T<sub>A</sub>
+   * </ul>
    * 
    * @param trans an affine transformation
    * @return this transformation, with an updated matrix
@@ -948,9 +948,9 @@ public class AffineTransformation
    * is equal to applying the argument transformation 
    * followed by this transformation.
    * Mathematically,
-   * <blockquote><pre>
-   * A.composeBefore(B) = T<sub>A</sub> x T<sub>B</sub>
-   * </pre></blockquote>
+   * <ul>
+   * <li>A.composeBefore(B) = T<sub>A</sub> x T<sub>B</sub>
+   * </ul>
    * 
    * @param trans an affine transformation
    * @return this transformation, with an updated matrix

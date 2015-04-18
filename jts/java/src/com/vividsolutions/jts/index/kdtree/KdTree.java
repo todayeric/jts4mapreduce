@@ -110,7 +110,7 @@ public class KdTree
 	 *          a data item for the point
 	 * @return returns a new KdNode if a new point is inserted, else an existing
 	 *         node is returned with its counter incremented. This can be checked
-	 *         by testing returnedNode.getCount() > 1.
+	 *         by testing returnedNode.getCount() &gt; 1.
 	 */
 	public KdNode insert(Coordinate p, Object data) {
 		if (root == null) {

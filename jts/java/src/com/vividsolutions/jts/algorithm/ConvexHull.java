@@ -55,6 +55,8 @@ public class ConvexHull
 
   /**
    * Create a new convex hull construction for the input {@link Geometry}.
+   *
+   * @param geometry use geometry's coordinates to compute convex hull
    */
   public ConvexHull(Geometry geometry)
   {
@@ -62,6 +64,9 @@ public class ConvexHull
   }
   /**
    * Create a new convex hull construction for the input {@link Coordinate} array.
+   *
+   * @param pts coordinates to compute convex hull
+   * @param geomFactory the GeometryFactory to be used in createPoint/createLineString...
    */
   public ConvexHull(Coordinate[] pts, GeometryFactory geomFactory)
   {
