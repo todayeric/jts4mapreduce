@@ -54,6 +54,12 @@ public class HCoordinate
    * lie outside the envelope of the line segments themselves.  In order
    * to increase the precision of the calculation input points should be normalized
    * before passing them to this routine.
+   * @param p1 start point of line p
+   * @param p2 end point of line p
+   * @param q1 start point of line q
+   * @param q2 end point of line q
+   * @return intersection point, which can lie outside the envelope of line
+   * @exception NotRepresentableException throw when result point is isNaN / isInfinite
    */
   public static Coordinate intersection(
       Coordinate p1, Coordinate p2,
@@ -135,9 +141,14 @@ public class HCoordinate
    * Constructs a homogeneous coordinate which is the intersection of the lines
    * define by the homogenous coordinates represented by two
    * {@link Coordinate}s.
+   * For example:
+   * HCoordinate l1 = new HCoordinate(p1, p2);
+   * HCoordinate l2 = new HCoordinate(q1, q2);
+   * HCoordinate intHCoord = new HCoordinate(l1, l2);
+   * Coordinate intersectionPoint= intHCoord.getCoordinate();
+   * @param p1 start point of line
+   * @param p2 end point of line
    * 
-   * @param p1
-   * @param p2
    */
   public HCoordinate(Coordinate p1, Coordinate p2) 
   {

@@ -1305,6 +1305,8 @@ public abstract class Geometry
    * Intersection of {@link GeometryCollection}s is supported
    * only for homogeneous collection types. 
    * <p>
+   * Intersection point of two {@link LineString} will not lie out the envelop of lines.
+   * <p>
    * Non-empty heterogeneous {@link GeometryCollection} arguments are not supported.
    *
    * @param  other the <code>Geometry</code> with which to compute the intersection
