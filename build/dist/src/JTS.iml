@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file://C:/data/martin/proj/jts/lib/xerces.jar" />
+    <libelement value="file://C:/data/martin/proj/jts/lib/Acme.jar" />
+    <libelement value="file://C:/data/martin/proj/jts/lib/jdom.jar" />
+    <libelement value="file://C:/data/martin/proj/jts/lib/junit.jar" />
+    <libelement value="file://C:/data/martin/proj/jts/libex/jump-core-1.2.jar" />
+    <varelement var="file://C:/data/martin/proj/jts/srcex" value="linksrc:srcex" />
+    <varelement var="file://C:/data/martin/proj/jts/classes" value="link:classes" />
+    <src_description expected_position="5">
+      <src_folder value="file://$MODULE_DIR$/" expected_position="0" />
+      <src_folder value="file://C:/data/martin/proj/jts/srcex" expected_position="6" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://C:/data/martin/proj/jts/classes" />
+    <exclude-output />
+    <content url="file://C:/data/martin/proj/jts/srcex">
+      <sourceFolder url="file://C:/data/martin/proj/jts/srcex" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="xerces.jar">
+        <CLASSES>
+          <root url="file://C:/data/martin/proj/jts/lib/xerces.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Acme.jar">
+        <CLASSES>
+          <root url="file://C:/data/martin/proj/jts/lib/Acme.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jdom.jar">
+        <CLASSES>
+          <root url="file://C:/data/martin/proj/jts/lib/jdom.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="junit.jar">
+        <CLASSES>
+          <root url="file://C:/data/martin/proj/jts/lib/junit.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="jump-core-1.2.jar">
+        <CLASSES>
+          <root url="file://C:/data/martin/proj/jts/libex/jump-core-1.2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

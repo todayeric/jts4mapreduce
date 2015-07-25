@@ -45,14 +45,14 @@
   	<property name="pre-zip.testxml" value="${pre-zip}/testxml"/>
   	<property name="pre-zip.jtsio" value="${pre-zip}/jtsio"/>
   	
-   	<property name="pre-zip.jts-jar" value="${pre-zip.lib}\jts-${jts.version}.jar" />
-   	<property name="pre-zip.jts-sources-jar" value="${pre-zip.lib}/jts-${jts.version}-sources.jar" />
+   	<property name="pre-zip.jts-jar" value="${pre-zip.lib}\jts4mapreduce-${jts.version}.jar" />
+   	<property name="pre-zip.jts-sources-jar" value="${pre-zip.lib}/jts4mapreduce-${jts.version}-sources.jar" />
    	<property name="pre-zip.jtstest-jar" value="${pre-zip.lib}\JTS_Test.jar" />
  	
-  	<property name="zipfile" value="jts-${jts.version}.zip"/>
+  	<property name="zipfile" value="jts4mapreduce-${jts.version}.zip"/>
   	<property name="doc-dir" value="doc"/>
 
-  	<property name="javadoc.title" value="JTS Topology Suite version ${jts.version}"/>
+  	<property name="javadoc.title" value="Jts4mapreduce ${jts.version}"/>
   	
    </target>
 
@@ -135,7 +135,7 @@
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
         <pathelement location="${pre-zip.lib}\acme.jar"/>
         <pathelement location="${pre-zip.lib}\junit.jar"/>
-        <pathelement location="${pre-zip.lib}\jts-${jts.version}.jar"/>
+        <pathelement location="${pre-zip.jts-jar}"/>
       </classpath>
     </javac>
     <copy todir="${jtsapp.classes}\com\vividsolutions\jtstest\testbuilder">
@@ -180,7 +180,7 @@
     <javac srcdir="${jtsio.src}" 
         	includes="**/*.java" listfiles="no"
         	destdir="${jtsio.classes}" 
-        	classpath="${pre-zip.lib}/jts-${jts.version}.jar;${jtsio.lib}/classes12-${ora.version}.jar;${jtsio.lib}/jsde91_sdk.jar"/>
+        	classpath="${pre-zip.jts-jar};${jtsio.lib}/classes12-${ora.version}.jar;${jtsio.lib}/jsde91_sdk.jar"/>
     	
     <jar destfile="${pre-zip.lib}/jtsio-${jts.version}.jar" basedir="${jtsio.classes}" />
     <!-- Sources JAR -->
@@ -271,7 +271,7 @@
 
   <target name="makezip" depends="props"
   	description="Zips all files into a delivery archive">
-    <zip destfile="${build}/jts-${jts.version}.zip" 
+    <zip destfile="${build}/jts4mapreduce-${jts.version}.zip" 
     	basedir="${pre-zip}"
     	excludes="**/src/**"
     	/>
