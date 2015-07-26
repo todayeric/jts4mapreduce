@@ -74,6 +74,7 @@
   	
     <copy file="${jts.lib}\jdom.jar"      tofile="${pre-zip.lib}\jdom.jar"   />
     <copy file="${jts.lib}\xerces.jar"    tofile="${pre-zip.lib}\xerces.jar" />
+    <copy file="${jts.lib}\hadoop-core-0.20.2-cdh3u4.jar"    tofile="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar" />
     <copy file="${jts.lib}\junit-3.7.jar" tofile="${pre-zip.lib}\junit.jar"  />
     <!--<copy file="${jts.lib}\acme.jar"      tofile="${pre-zip.lib}\acme.jar"   /> -->
   	
@@ -106,6 +107,7 @@
       <classpath>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+	<pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
       </classpath>
     </javac>
     <delete file="${pre-zip.lib}/jts-*" failonerror="false"/>
@@ -133,6 +135,7 @@
       <classpath>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+        <pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
         <pathelement location="${pre-zip.lib}\acme.jar"/>
         <pathelement location="${pre-zip.lib}\junit.jar"/>
         <pathelement location="${pre-zip.jts-jar}"/>
@@ -158,6 +161,7 @@
       <classpath>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+        <pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
       </classpath>
     </javadoc>
   </target>
@@ -180,7 +184,7 @@
     <javac srcdir="${jtsio.src}" 
         	includes="**/*.java" listfiles="no"
         	destdir="${jtsio.classes}" 
-        	classpath="${pre-zip.jts-jar};${jtsio.lib}/classes12-${ora.version}.jar;${jtsio.lib}/jsde91_sdk.jar"/>
+        	classpath="${pre-zip.jts-jar};${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar;${jtsio.lib}/classes12-${ora.version}.jar;${jtsio.lib}/jsde91_sdk.jar"/>
     	
     <jar destfile="${pre-zip.lib}/jtsio-${jts.version}.jar" basedir="${jtsio.classes}" />
     <!-- Sources JAR -->
@@ -203,6 +207,7 @@
         <pathelement location="${jtsio.lib}/jsde91_sdk.jar"/>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+	<pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
       </classpath>
     </javadoc>
   </target>
@@ -223,6 +228,7 @@
         <pathelement location="${pre-zip.jtstest-jar}"/>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+	<pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
         <pathelement location="${pre-zip.lib}\acme.jar"/>
         <pathelement location="${pre-zip.lib}\junit.jar"/>
       </classpath>
@@ -250,6 +256,7 @@
         <pathelement location="${pre-zip.jtstest-jar}"/>
         <pathelement location="${pre-zip.lib}\jdom.jar"/>
         <pathelement location="${pre-zip.lib}\xerces.jar"/>
+	<pathelement location="${pre-zip.lib}\hadoop-core-0.20.2-cdh3u4.jar"/>
         <pathelement location="${pre-zip.lib}\acme.jar"/>
         <pathelement location="${pre-zip.lib}\junit.jar"/>
       </classpath>
