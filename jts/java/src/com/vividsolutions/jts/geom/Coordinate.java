@@ -141,7 +141,7 @@ public class Coordinate implements Comparable, Cloneable, Serializable {
   /**
    * Gets the ordinate value for the given index.
    * The supported values for the index are 
-   * {@link X}, {@link Y}, and {@link Z}.
+   * {@link #X}, {@link #Y}, and {@link #Z}.
    * 
    * @param ordinateIndex the ordinate index
    * @return the value of the ordinate
@@ -161,7 +161,7 @@ public class Coordinate implements Comparable, Cloneable, Serializable {
    * Sets the ordinate for the given index
    * to a given value.
    * The supported values for the index are 
-   * {@link X}, {@link Y}, and {@link Z}.
+   * {@link #X}, {@link #Y}, and {@link #Z}.
    * 
    * @param ordinateIndex the ordinate index
    * @param value the value to set

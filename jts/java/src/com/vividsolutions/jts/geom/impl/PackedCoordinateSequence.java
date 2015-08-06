@@ -114,8 +114,10 @@ public abstract class PackedCoordinateSequence
     return coords;
   }
 
+
   /**
-   * @return
+   * @return The Coordinate[] to which this sequence reference refers, or
+   *           <code>null</code> if this reference coordiante object has been cleared
    */
   private Coordinate[] getCachedCoords() {
     if (coordRef != null) {
@@ -185,7 +187,7 @@ public abstract class PackedCoordinateSequence
    * building a new Coordinate object
    *
    * @param index
-   * @return
+   * @return coordinate by index
    */
   protected abstract Coordinate getCoordinateInternal(int index);
 

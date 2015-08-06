@@ -49,7 +49,7 @@ public class HalfEdge {
    * Initialize a symmetric pair of halfedges.
    * Intended for use by {@link EdgeGraph} subclasses.
    * The edges are initialized to have each other 
-   * as the {@link sym} edge, and to have {@link next} pointers
+   * as the {@link #sym} edge, and to have {@link #next} pointers
    * which point to edge other.
    * This effectively creates a graph containing a single edge.
    * 

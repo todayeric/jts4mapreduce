@@ -225,9 +225,9 @@ public class GeometryTransformer
   /**
    * Transforms a {@link LineString} geometry.
    *
-   * @param geom
-   * @param parent
-   * @return
+   * @param geom copy it's coordinate to create LineString
+   * @param parent unused now
+   * @return  new LineString Object
    */
   protected Geometry transformLineString(LineString geom, Geometry parent) {
     // should check for 1-point sequences and downgrade them to points
